@@ -3,19 +3,19 @@
 //CONST- CHANGE ALL THESE TO TELL SOLRSTRAP ABOUT THE LOCATION AND STRUCTURE OF YOUR SOLR
 
 var SERVERROOT = 'http://localhost:8983/solr/gettingstarted_shard1_replica2/select'; //SELECT endpoint
-var HITTITLE = 'Last';                                        //Name of the title field- the heading of each hit
+var HITTITLE = 'lastName';                                        //Name of the title field- the heading of each hit
 var HITBODY = 'text';                                          //Name of the body field- the teaser text of each hit
 var HITSPERPAGE = 9999;                                          //page size- hits per page
-var FACETS = ['Last','Address'];                       //facet categories
+var FACETS = ['lastName','streetAddress'];                       //facet categories
 
-var FACETS_TITLES = {'Last': 'Last Name'};  // selective rename facet names for display
+var FACETS_TITLES = {'lastName': 'Last Name', 'streetAddress': 'Street Address'};  // selective rename facet names for display
 
 var HITID = 'id'		// Name of the id field
 var HITTEASER = 'teaser';	// Name of field to use for teaser
 var HITLINK = 'url';		// Name of field to use for link
 
 var HL = true;
-var HL_FL = 'text, Last';
+var HL_FL = 'text, lastName';
 var HL_SIMPLE_PRE = '<em>';
 var HL_SIMPLE_POST = '</em>';
 var HL_SNIPPETS = 3;
