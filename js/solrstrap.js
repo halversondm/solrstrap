@@ -2,20 +2,20 @@
 
 //CONST- CHANGE ALL THESE TO TELL SOLRSTRAP ABOUT THE LOCATION AND STRUCTURE OF YOUR SOLR
 
-var SERVERROOT = 'http://evolvingweb.ca/solr/reuters/select/'; //SELECT endpoint
-var HITTITLE = 'title';                                        //Name of the title field- the heading of each hit
+var SERVERROOT = 'http://localhost:8983/solr/gettingstarted_shard1_replica2/select'; //SELECT endpoint
+var HITTITLE = 'Last';                                        //Name of the title field- the heading of each hit
 var HITBODY = 'text';                                          //Name of the body field- the teaser text of each hit
 var HITSPERPAGE = 20;                                          //page size- hits per page
-var FACETS = ['topics','organisations'];                       //facet categories
+var FACETS = ['Last','Address'];                       //facet categories
 
-var FACETS_TITLES = {'topics': 'subjects'};  // selective rename facet names for display
+var FACETS_TITLES = {'Last': 'Last Name'};  // selective rename facet names for display
 
 var HITID = 'id'		// Name of the id field
 var HITTEASER = 'teaser';	// Name of field to use for teaser
 var HITLINK = 'url';		// Name of field to use for link
 
 var HL = true;
-var HL_FL = 'text, title';
+var HL_FL = 'text, Last';
 var HL_SIMPLE_PRE = '<em>';
 var HL_SIMPLE_POST = '</em>';
 var HL_SNIPPETS = 3;
