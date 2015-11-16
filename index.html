@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solrstrap Template</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+    <link href="css/solrstrap.css" rel="stylesheet" media="screen">
+</head>
+<body screen_capture_injected="true">
+
+<!--actual visible HTML-->
+<div class="header">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-brand">Solrstrap</div>
+            <form class="navbar-form navbar-left">
+                <div id="form-group">
+                    <input type="text" class="form-control" placeholder="Search ..."
+                           onfocus="this.value = this.value;" id="solrstrap-searchbox" name="q">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div id="solrstrap-facets" class="col-sm-4"></div>
+        <div id="solrstrap-hits" class="col-sm-8"></div>
+    </div>
+</div>
+
+
+<!--Handlebars layout templates-->
+<script type="text/x-handlebars-template" id="hit-template">
+    <div class="entry">
+        {{#if link}}
+        <a href="{{link}}" target="_blank">{{{title}}}</a><br>
+        {{{text}}}
+        {{else}}
+        <strong>{{{title}}}</strong><br>
+        {{{text}}}
+        {{/if}}
+    </div>
+</script>
+<script type="text/x-handlebars-template" id="result-summary-template">
+    <div id="result-summary">
+        {{totalresults}} results for <strong><i>{{query}}</i></strong>
+    </div>
+</script>
+<script type="text/x-handlebars-template" id="nav-template">
+    <div class="facet">
+        <span class="nav-title" data-facetname="{{title}}">{{facet_displayname title}}</span><br>
+        {{#each navs}}
+        <a href='#' title='{{@key}} ({{this}})'>{{@key}}</a> ({{this}})<br/>
+        {{/each}}
+    </div>
+</script>
+<script type="text/x-handlebars-template" id="chosen-nav-template">
+    <div class="chosen-facet">
+        <span class="nav-title">Filters</span><br>
+        {{#each this}}
+        <a class="close" href="#">&times;</a>
+        <a href='#' class="selectedNav"
+           data-filter="{{name}}:{{value}}"
+           title="{{facet_displayname name}}:{{value}}">{{facet_displayname name}}:{{value}}</a><br>
+        {{/each}}
+    </div>
+</script>
+
+<!--load scripts at the bottom-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
+<script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/jquery.ba-bbq/1.2.1/jquery.ba-bbq.min.js"></script>
+<script type="text/javascript"
+        src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+        src="js/handlebars.js"></script>
+<script type='text/javascript' src="js/solrstrap.js"></script>
+</body>
+</html>
