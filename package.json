@@ -2,7 +2,7 @@
   "name": "solrstrap",
   "version": "1.0.0",
   "description": "template for solr",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,12 @@
   },
   "homepage": "https://github.com/halversondm/solrstrap#readme",
   "dependencies": {
-    "bootstrap": "^3.3.5"
+    "bootstrap": "^3.3.5",
+    "handlebars": "^4.0.4",
+    "jquery": "^2.1.4",
+    "jquery-migrate": "^1.2.1"
+  },
+  "scripts": {
+    "start": "node app.js"
   }
 }
